@@ -1,4 +1,7 @@
 # Asterisk Java Khomp Module
+
+[![Dependency Status](https://www.versioneye.com/user/projects/56035e9af5f2eb001a000cc1/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56035e9af5f2eb001a000cc1)
+
 Implementation of Khomp Modules Functions for Asterisk Java
 
 ## INTRODUCTION
