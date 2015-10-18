@@ -1,4 +1,4 @@
-package org.asteriskjava.khomp;
+package org.asteriskjava.khomp.manager.util;
 
 import org.asteriskjava.khomp.manager.event.*;
 import org.asteriskjava.manager.ManagerConnection;
@@ -32,6 +32,7 @@ public class AMIEventUtils {
      * Register the Khomp Events in a Manager Connection, some events replaces built in events from asteriskjava lib, because this events does not work with Khomp events.
      *
      * @param managerConnection {@link ManagerConnection} to register the events.
+     * @throws NullPointerException if the {@code managerConnection} is null.
      */
     public static void registerKhompEvents(ManagerConnection managerConnection) {
         Objects.requireNonNull(managerConnection, "The manager connection must not be null!");
@@ -65,7 +66,7 @@ public class AMIEventUtils {
         if (date == null)
             return null;
 
-        // Format that i saw in Brazil
+        // Format that i saw in Brazil using a TIM chip
         if (date.matches("\\d\\d/\\d\\d/\\d\\d,\\d\\d:\\d\\d:\\d\\d[\\-].*")) {
             final String[] dateSplit = date.split("[,-]");
 

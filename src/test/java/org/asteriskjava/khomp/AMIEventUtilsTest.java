@@ -1,5 +1,6 @@
 package org.asteriskjava.khomp;
 
+import org.asteriskjava.khomp.manager.util.AMIEventUtils;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;

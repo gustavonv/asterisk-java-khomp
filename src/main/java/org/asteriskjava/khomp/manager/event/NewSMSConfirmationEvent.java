@@ -1,6 +1,6 @@
 package org.asteriskjava.khomp.manager.event;
 
-import org.asteriskjava.khomp.AMIEventUtils;
+import org.asteriskjava.khomp.manager.util.AMIEventUtils;
 import org.asteriskjava.manager.event.ManagerEvent;
 
 import java.util.Date;
@@ -58,19 +58,19 @@ public class NewSMSConfirmationEvent extends ManagerEvent {
     }
 
     /**
-     * @return The date information as String, because the carrier can send the date and time an extra info as text.
-     */
-    public String getDateTextInfo() {
-        return this.dateTextInfo;
-    }
-
-    /**
      * Internal use.
      *
      * @param date Date information sent by the Carrier.
      */
     public void setDate(String date) {
         this.date = AMIEventUtils.parseSMSDate(date);
+    }
+
+    /**
+     * @return The date information as String, because the carrier can send the date and time an extra info as text.
+     */
+    public String getDateTextInfo() {
+        return this.dateTextInfo;
     }
 
     /**

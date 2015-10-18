@@ -39,16 +39,17 @@ public enum KCallAnswerInfo {
      */
     FAX("Fax");
 
-    private final String callAnswerInfo;
     private final static Map<String, KCallAnswerInfo> cache;
 
     static {
-        cache = new HashMap<String, KCallAnswerInfo>(8, 0.75f);
+        cache = new HashMap<>(8, 0.75f);
 
         for (KCallAnswerInfo info : KCallAnswerInfo.values()) {
             cache.put(info.callAnswerInfo.toLowerCase(), info);
         }
     }
+
+    private final String callAnswerInfo;
 
     KCallAnswerInfo(String callAnswerInfo) {
         this.callAnswerInfo = callAnswerInfo;
