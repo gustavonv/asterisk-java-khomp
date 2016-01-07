@@ -5,8 +5,10 @@ import org.asteriskjava.manager.ManagerConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.Objects;
 
@@ -21,7 +23,10 @@ public class AMIEventUtils {
 
     private final static Logger log = LoggerFactory.getLogger(AMIEventUtils.class);
 
-    private final static SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd kk:mm:ss");
+    /**
+     * Date time formatter, this one is ThreadSafe.
+     */
+    private final static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yy/MM/dd kk:mm:ss");
 
     /**
      * @deprecated UtilityClass
@@ -66,13 +71,13 @@ public class AMIEventUtils {
         if (date == null)
             return null;
 
-        // Format that i saw in Brazil using a TIM chip
+        // Format that i saw in Brazil using a TIM, CLARO and VIVO chip
         if (date.matches("\\d\\d/\\d\\d/\\d\\d,\\d\\d:\\d\\d:\\d\\d[\\-].*")) {
             final String[] dateSplit = date.split("[,-]");
 
             try {
-                return sdf.parse(dateSplit[0] + " " + dateSplit[1]);
-            } catch (ParseException e) {
+                return Date.from(LocalDateTime.parse(dateSplit[0] + " " + dateSplit[1], dateTimeFormatter).atZone(ZoneId.systemDefault()).toInstant());
+            } catch (DateTimeParseException e) {
                 log.error("Error parsing date {}. Please report at {}", date, ISSUE_LINK);
                 return null;
             }
