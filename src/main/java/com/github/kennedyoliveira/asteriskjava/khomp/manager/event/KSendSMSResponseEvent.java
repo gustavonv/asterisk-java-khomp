@@ -11,64 +11,64 @@ import org.asteriskjava.manager.event.ManagerEvent;
  */
 public class KSendSMSResponseEvent extends ManagerEvent {
 
-    private String channel;
-    private String messageReference;
-    private String response;
+  private String channel;
+  private String messageReference;
+  private String response;
 
-    public KSendSMSResponseEvent(Object source) {
-        super(source);
-    }
+  public KSendSMSResponseEvent(Object source) {
+    super(source);
+  }
 
-    /**
-     * Channel used to send the message.
-     *
-     * @return The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
-     */
-    public String getChannel() {
-        return channel;
-    }
+  /**
+   * Channel used to send the message.
+   *
+   * @return The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
+   */
+  public String getChannel() {
+    return channel;
+  }
 
-    /**
-     * @param channel The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
-     */
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
+  /**
+   * @param channel The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
+   */
+  public void setChannel(String channel) {
+    this.channel = channel;
+  }
 
-    /**
-     * @return Message identification id.
-     */
-    public String getMessageReference() {
-        return messageReference;
-    }
+  /**
+   * @return Message identification id.
+   */
+  public String getMessageReference() {
+    return messageReference;
+  }
 
-    /**
-     * @param messageReference Message identification id.
-     */
-    public void setMessageReference(String messageReference) {
-        this.messageReference = messageReference;
-    }
+  /**
+   * @param messageReference Message identification id.
+   */
+  public void setMessageReference(String messageReference) {
+    this.messageReference = messageReference;
+  }
 
-    /**
-     * @return Response (Success or Fail)
-     */
-    public String getResponse() {
-        return response;
-    }
+  /**
+   * @return Response (Success or Fail)
+   */
+  public String getResponse() {
+    return response;
+  }
 
-    /**
-     * @param response The response.
-     */
-    public void setResponse(String response) {
-        this.response = response;
-    }
+  /**
+   * @param response The response.
+   */
+  public void setResponse(String response) {
+    this.response = response;
+  }
 
-    /**
-     * Helper method.
-     *
-     * @return If the message was sent succefully.
-     */
-    public boolean isSuccefully() {
-        return "success".equalsIgnoreCase(this.response);
-    }
+  /**
+   * Helper method.
+   *
+   * @return If the message was sent succefully.
+   */
+  public boolean isSuccefully() {
+    return "success".equalsIgnoreCase(this.response);
+  }
 }

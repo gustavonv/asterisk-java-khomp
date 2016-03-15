@@ -20,80 +20,80 @@ import org.asteriskjava.manager.action.AbstractManagerAction;
  */
 public class KSelectSIMCardAction extends AbstractManagerAction {
 
-    private String channel;
-    private String SIMCard;
+  private String channel;
+  private String SIMCard;
 
-    /**
-     * Constructs a new {@link KSelectSIMCardAction} for changing the current SIMCard of a GSM device.
-     *
-     * @param channel Channel in the format B<b>X</b>C<b>Y</b> where {@code X} is the device ID and {@code Y} is the Channel Number.
-     * @param SIMCard The number of the SIMCard to select.
-     * @see KSelectSIMCardAction#setChannel(String)
-     * @see KSelectSIMCardAction#setSIMCard(String)
-     */
-    public KSelectSIMCardAction(String channel, String SIMCard) {
-        this.channel = channel;
-        this.SIMCard = SIMCard;
-    }
+  /**
+   * Constructs a new {@link KSelectSIMCardAction} for changing the current SIMCard of a GSM device.
+   *
+   * @param channel Channel in the format B<b>X</b>C<b>Y</b> where {@code X} is the device ID and {@code Y} is the Channel Number.
+   * @param SIMCard The number of the SIMCard to select.
+   * @see KSelectSIMCardAction#setChannel(String)
+   * @see KSelectSIMCardAction#setSIMCard(String)
+   */
+  public KSelectSIMCardAction(String channel, String SIMCard) {
+    this.channel = channel;
+    this.SIMCard = SIMCard;
+  }
 
-    /**
-     * @return The channel that will have the SIMCard selected.
-     */
-    public String getChannel() {
-        return channel;
-    }
+  /**
+   * @return The channel that will have the SIMCard selected.
+   */
+  public String getChannel() {
+    return channel;
+  }
 
-    /**
-     * <p>
-     * The channel that will have the SIMCard selected. <br><br>
-     * <b>This parameter is mandaroty.</b>
-     * </p>
-     *
-     * @param channel Channel in the format B<b>X</b>C<b>Y</b> where {@code X} is the device ID and {@code Y} is the Channel Number
-     */
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
+  /**
+   * <p>
+   * The channel that will have the SIMCard selected. <br><br>
+   * <b>This parameter is mandaroty.</b>
+   * </p>
+   *
+   * @param channel Channel in the format B<b>X</b>C<b>Y</b> where {@code X} is the device ID and {@code Y} is the Channel Number
+   */
+  public void setChannel(String channel) {
+    this.channel = channel;
+  }
 
-    /**
-     * @return The SIMCard that will be selected.
-     */
-    public String getSIMCard() {
-        return SIMCard;
-    }
+  /**
+   * @return The SIMCard that will be selected.
+   */
+  public String getSIMCard() {
+    return SIMCard;
+  }
 
-    /**
-     * <p>
-     * Number for identifying the SIMCard on the channel, the number can be: {@code 0} or {@code 1}. For devices that has 2 chips per channel.<br><br>
-     * <b>This parameter is Mandatory.</b>
-     * </p>
-     *
-     * @param SIMCard The number of the SIMCard to select.
-     */
-    public void setSIMCard(String SIMCard) {
-        this.SIMCard = SIMCard;
-    }
+  /**
+   * <p>
+   * Number for identifying the SIMCard on the channel, the number can be: {@code 0} or {@code 1}. For devices that has 2 chips per channel.<br><br>
+   * <b>This parameter is Mandatory.</b>
+   * </p>
+   *
+   * @param SIMCard The number of the SIMCard to select.
+   */
+  public void setSIMCard(String SIMCard) {
+    this.SIMCard = SIMCard;
+  }
 
-    @Override
-    public String getAction() {
-        return "KSelectSIMCard";
-    }
+  @Override
+  public String getAction() {
+    return "KSelectSIMCard";
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
 
-        KSelectSIMCardAction that = (KSelectSIMCardAction) o;
+    KSelectSIMCardAction that = (KSelectSIMCardAction) o;
 
-        if (channel != null ? !channel.equals(that.channel) : that.channel != null) return false;
-        return !(SIMCard != null ? !SIMCard.equals(that.SIMCard) : that.SIMCard != null);
-    }
+    if (channel != null ? !channel.equals(that.channel) : that.channel != null) return false;
+    return !(SIMCard != null ? !SIMCard.equals(that.SIMCard) : that.SIMCard != null);
+  }
 
-    @Override
-    public int hashCode() {
-        int result = channel != null ? channel.hashCode() : 0;
-        result = 31 * result + (SIMCard != null ? SIMCard.hashCode() : 0);
-        return result;
-    }
+  @Override
+  public int hashCode() {
+    int result = channel != null ? channel.hashCode() : 0;
+    result = 31 * result + (SIMCard != null ? SIMCard.hashCode() : 0);
+    return result;
+  }
 }

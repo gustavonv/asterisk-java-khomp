@@ -11,47 +11,47 @@ import org.asteriskjava.manager.event.ManagerEvent;
  */
 public class SIMSelectionFinishedEvent extends ManagerEvent {
 
-    private String channel;
-    private String registry;
+  private String channel;
+  private String registry;
 
-    public SIMSelectionFinishedEvent(Object source) {
-        super(source);
-    }
+  public SIMSelectionFinishedEvent(Object source) {
+    super(source);
+  }
 
-    /**
-     * @return The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
-     */
-    public String getChannel() {
-        return channel;
-    }
+  /**
+   * @return The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
+   */
+  public String getChannel() {
+    return channel;
+  }
 
-    /**
-     * @param channel The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
-     */
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
+  /**
+   * @param channel The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
+   */
+  public void setChannel(String channel) {
+    this.channel = channel;
+  }
 
-    /**
-     * @return "success" if was succefully executed and "fail" otherwise.
-     */
-    public String getRegistry() {
-        return registry;
-    }
+  /**
+   * @return "success" if was succefully executed and "fail" otherwise.
+   */
+  public String getRegistry() {
+    return registry;
+  }
 
-    /**
-     * @param registry The operation status.
-     */
-    public void setRegistry(String registry) {
-        this.registry = registry;
-    }
+  /**
+   * @param registry The operation status.
+   */
+  public void setRegistry(String registry) {
+    this.registry = registry;
+  }
 
-    /**
-     * Helper method that checkes {@link #getRegistry()} for success.
-     *
-     * @return True if succefully, false otherwise.
-     */
-    public boolean isSuccessfully() {
-        return "success".equalsIgnoreCase(registry);
-    }
+  /**
+   * Helper method that checkes {@link #getRegistry()} for success.
+   *
+   * @return True if succefully, false otherwise.
+   */
+  public boolean isSuccessfully() {
+    return "success".equalsIgnoreCase(registry);
+  }
 }

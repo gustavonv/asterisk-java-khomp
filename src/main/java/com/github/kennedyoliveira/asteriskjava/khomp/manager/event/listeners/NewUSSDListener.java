@@ -10,17 +10,17 @@ import org.asteriskjava.manager.event.ManagerEvent;
 @FunctionalInterface
 public interface NewUSSDListener extends ManagerEventListener {
 
-    /**
-     * Triggers when there is a {@link NewUSSDEvent}.
-     *
-     * @param event the event.
-     */
-    void handleNewUSSDEvent(NewUSSDEvent event);
+  /**
+   * Triggers when there is a {@link NewUSSDEvent}.
+   *
+   * @param event the event.
+   */
+  void handleNewUSSDEvent(NewUSSDEvent event);
 
-    @Override
-    default void onManagerEvent(ManagerEvent event) {
-        if (event instanceof NewUSSDEvent) {
-            handleNewUSSDEvent((NewUSSDEvent) event);
-        }
+  @Override
+  default void onManagerEvent(ManagerEvent event) {
+    if (event instanceof NewUSSDEvent) {
+      handleNewUSSDEvent((NewUSSDEvent) event);
     }
+  }
 }

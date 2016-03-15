@@ -9,42 +9,42 @@ import org.asteriskjava.manager.event.ManagerEvent;
  */
 public class AlarmEvent extends ManagerEvent {
 
-    private String channel;
-    private String alarm;
+  private String channel;
+  private String alarm;
 
-    public AlarmEvent(Object source) {
-        super(source);
-    }
+  public AlarmEvent(Object source) {
+    super(source);
+  }
 
-    /**
-     * @return Name of the alarm
-     */
-    public String getAlarm() {
-        return alarm;
-    }
+  /**
+   * @return Name of the alarm
+   */
+  public String getAlarm() {
+    return alarm;
+  }
 
-    /**
-     * Internal use.
-     *
-     * @param alarm Name of the alarm.
-     */
-    public void setAlarm(String alarm) {
-        this.alarm = alarm;
-    }
+  /**
+   * Internal use.
+   *
+   * @param alarm Name of the alarm.
+   */
+  public void setAlarm(String alarm) {
+    this.alarm = alarm;
+  }
 
-    /**
-     * @return The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
-     */
-    public String getChannel() {
-        return channel;
-    }
+  /**
+   * @return The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
+   */
+  public String getChannel() {
+    return channel;
+  }
 
-    /**
-     * Internal use.
-     *
-     * @param channel The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
-     */
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
+  /**
+   * Internal use.
+   *
+   * @param channel The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
+   */
+  public void setChannel(String channel) {
+    this.channel = channel;
+  }
 }

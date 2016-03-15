@@ -10,17 +10,17 @@ import org.asteriskjava.manager.event.ManagerEvent;
 @FunctionalInterface
 public interface BranchOnHookListener extends ManagerEventListener {
 
-    /**
-     * Triggers when there is a {@link BranchOnHookEvent}
-     *
-     * @param event the event.
-     */
-    void handleBrancOnHookEvent(BranchOnHookEvent event);
+  /**
+   * Triggers when there is a {@link BranchOnHookEvent}
+   *
+   * @param event the event.
+   */
+  void handleBrancOnHookEvent(BranchOnHookEvent event);
 
-    @Override
-    default void onManagerEvent(ManagerEvent event) {
-        if (event instanceof BranchOnHookEvent) {
-            handleBrancOnHookEvent((BranchOnHookEvent) event);
-        }
+  @Override
+  default void onManagerEvent(ManagerEvent event) {
+    if (event instanceof BranchOnHookEvent) {
+      handleBrancOnHookEvent((BranchOnHookEvent) event);
     }
+  }
 }

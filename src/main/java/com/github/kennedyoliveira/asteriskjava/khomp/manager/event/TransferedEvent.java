@@ -10,40 +10,40 @@ import org.asteriskjava.manager.event.ManagerEvent;
  * @author kennedy
  */
 public class TransferedEvent extends ManagerEvent {
-    private String channel;
-    private String destination;
+  private String channel;
+  private String destination;
 
-    public TransferedEvent(Object source) {
-        super(source);
-    }
+  public TransferedEvent(Object source) {
+    super(source);
+  }
 
-    /**
-     * @return The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
-     */
-    public String getChannel() {
-        return channel;
-    }
+  /**
+   * @return The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
+   */
+  public String getChannel() {
+    return channel;
+  }
 
-    /**
-     * Internal use.
-     *
-     * @param channel The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
-     */
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
+  /**
+   * Internal use.
+   *
+   * @param channel The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
+   */
+  public void setChannel(String channel) {
+    this.channel = channel;
+  }
 
-    /**
-     * @return Destination identification.
-     */
-    public String getDestination() {
-        return destination;
-    }
+  /**
+   * @return Destination identification.
+   */
+  public String getDestination() {
+    return destination;
+  }
 
-    /**
-     * @param destination Destination identification.
-     */
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
+  /**
+   * @param destination Destination identification.
+   */
+  public void setDestination(String destination) {
+    this.destination = destination;
+  }
 }

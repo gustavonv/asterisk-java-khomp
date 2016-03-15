@@ -7,13 +7,13 @@ package com.github.kennedyoliveira.asteriskjava.khomp;
  */
 public class Constants {
 
-    /**
-     * Link for reporting issues
-     */
-    public final static String ISSUE_LINK = "https://github.com/kennedyoliveira/asterisk-java-khomp/issues";
+  /**
+   * Link for reporting issues
+   */
+  public final static String ISSUE_LINK = "https://github.com/kennedyoliveira/asterisk-java-khomp/issues";
 
-    /**
-     * @deprecated Utility Class
-     */
-    private Constants() {}
+  /**
+   * @deprecated Utility Class
+   */
+  private Constants() {}
 }

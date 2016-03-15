@@ -10,17 +10,17 @@ import org.asteriskjava.manager.event.ManagerEvent;
 @FunctionalInterface
 public interface AnswerInfoListener extends ManagerEventListener {
 
-    /**
-     * Triggers when there is a {@link AnswerInfoEvent}
-     *
-     * @param event the event.
-     */
-    void handleAnswerInfo(AnswerInfoEvent event);
+  /**
+   * Triggers when there is a {@link AnswerInfoEvent}
+   *
+   * @param event the event.
+   */
+  void handleAnswerInfo(AnswerInfoEvent event);
 
-    @Override
-    default void onManagerEvent(ManagerEvent event) {
-        if (event instanceof AnswerInfoEvent) {
-            handleAnswerInfo((AnswerInfoEvent) event);
-        }
+  @Override
+  default void onManagerEvent(ManagerEvent event) {
+    if (event instanceof AnswerInfoEvent) {
+      handleAnswerInfo((AnswerInfoEvent) event);
     }
+  }
 }

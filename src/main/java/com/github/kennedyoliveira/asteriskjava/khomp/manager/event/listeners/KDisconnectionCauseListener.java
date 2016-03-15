@@ -10,17 +10,17 @@ import org.asteriskjava.manager.event.ManagerEvent;
 @FunctionalInterface
 public interface KDisconnectionCauseListener extends ManagerEventListener {
 
-    /**
-     * Trigger whe there is a {@link KDisconnectionCauseEvent}.
-     *
-     * @param event the event.
-     */
-    void handleKDisconnectionCause(KDisconnectionCauseEvent event);
+  /**
+   * Trigger whe there is a {@link KDisconnectionCauseEvent}.
+   *
+   * @param event the event.
+   */
+  void handleKDisconnectionCause(KDisconnectionCauseEvent event);
 
-    @Override
-    default void onManagerEvent(ManagerEvent event) {
-        if (event instanceof KDisconnectionCauseEvent) {
-            handleKDisconnectionCause((KDisconnectionCauseEvent) event);
-        }
+  @Override
+  default void onManagerEvent(ManagerEvent event) {
+    if (event instanceof KDisconnectionCauseEvent) {
+      handleKDisconnectionCause((KDisconnectionCauseEvent) event);
     }
+  }
 }

@@ -10,17 +10,17 @@ import org.asteriskjava.manager.event.ManagerEvent;
 @FunctionalInterface
 public interface CollectCallListener extends ManagerEventListener {
 
-    /**
-     * Triggers where there is a {@link CollectCallEvent}
-     *
-     * @param event the event.
-     */
-    void handleCollectCallEvent(CollectCallEvent event);
+  /**
+   * Triggers where there is a {@link CollectCallEvent}
+   *
+   * @param event the event.
+   */
+  void handleCollectCallEvent(CollectCallEvent event);
 
-    @Override
-    default void onManagerEvent(ManagerEvent event) {
-        if (event instanceof CollectCallEvent) {
-            handleCollectCallEvent((CollectCallEvent) event);
-        }
+  @Override
+  default void onManagerEvent(ManagerEvent event) {
+    if (event instanceof CollectCallEvent) {
+      handleCollectCallEvent((CollectCallEvent) event);
     }
+  }
 }

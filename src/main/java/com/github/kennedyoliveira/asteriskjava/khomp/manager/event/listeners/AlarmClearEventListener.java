@@ -10,17 +10,17 @@ import org.asteriskjava.manager.event.ManagerEvent;
 @FunctionalInterface
 public interface AlarmClearEventListener extends ManagerEventListener {
 
-    /**
-     * Trigger when there is a {@link AlarmClearEvent}.
-     *
-     * @param event the event.
-     */
-    void handleAlarmClearEvent(AlarmClearEvent event);
+  /**
+   * Trigger when there is a {@link AlarmClearEvent}.
+   *
+   * @param event the event.
+   */
+  void handleAlarmClearEvent(AlarmClearEvent event);
 
-    @Override
-    default void onManagerEvent(ManagerEvent event) {
-        if (event instanceof AlarmClearEvent) {
-            handleAlarmClearEvent((AlarmClearEvent) event);
-        }
+  @Override
+  default void onManagerEvent(ManagerEvent event) {
+    if (event instanceof AlarmClearEvent) {
+      handleAlarmClearEvent((AlarmClearEvent) event);
     }
+  }
 }

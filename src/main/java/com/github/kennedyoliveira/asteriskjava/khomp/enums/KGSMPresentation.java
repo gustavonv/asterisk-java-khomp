@@ -10,23 +10,23 @@ import com.github.kennedyoliveira.asteriskjava.khomp.manager.action.KGSMPresenta
  */
 public enum KGSMPresentation {
 
-    /**
-     * The number won't be show in a outgoing call.
-     */
-    RESTRICTED("restricted"),
-    /**
-     * The number will be show in a outgoing call.
-     */
-    NOT_RESTRICTED("notrestricted");
+  /**
+   * The number won't be show in a outgoing call.
+   */
+  RESTRICTED("restricted"),
+  /**
+   * The number will be show in a outgoing call.
+   */
+  NOT_RESTRICTED("notrestricted");
 
-    private final String presentation;
+  private final String presentation;
 
-    KGSMPresentation(String presentation) {
-        this.presentation = presentation;
-    }
+  KGSMPresentation(String presentation) {
+    this.presentation = presentation;
+  }
 
-    @Override
-    public String toString() {
-        return presentation;
-    }
+  @Override
+  public String toString() {
+    return presentation;
+  }
 }

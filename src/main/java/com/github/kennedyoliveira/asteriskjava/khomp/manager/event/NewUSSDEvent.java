@@ -10,42 +10,42 @@ import org.asteriskjava.manager.event.ManagerEvent;
  */
 public class NewUSSDEvent extends ManagerEvent {
 
-    private String channel;
-    private String message;
+  private String channel;
+  private String message;
 
-    public NewUSSDEvent(Object source) {
-        super(source);
-    }
+  public NewUSSDEvent(Object source) {
+    super(source);
+  }
 
-    /**
-     * @return The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
-     */
-    public String getChannel() {
-        return channel;
-    }
+  /**
+   * @return The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
+   */
+  public String getChannel() {
+    return channel;
+  }
 
-    /**
-     * Internal use.
-     *
-     * @param channel The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
-     */
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
+  /**
+   * Internal use.
+   *
+   * @param channel The channel name in the format {@code Khomp/BxCy} where {@code x} is the Device ID and {@code y} is the Channel Number.
+   */
+  public void setChannel(String channel) {
+    this.channel = channel;
+  }
 
-    /**
-     * @return The message itself.
-     */
-    public String getMessage() {
-        return message;
-    }
+  /**
+   * @return The message itself.
+   */
+  public String getMessage() {
+    return message;
+  }
 
-    /**
-     * Interal use.
-     *
-     * @param message The message itself.
-     */
-    public void setMessage(String message) {
-        this.message = message;
-    }
+  /**
+   * Interal use.
+   *
+   * @param message The message itself.
+   */
+  public void setMessage(String message) {
+    this.message = message;
+  }
 }

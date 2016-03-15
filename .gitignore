@@ -13,3 +13,5 @@ khomp-module.iml
 src/main/java/Teste.java
 asterisk-java-khomp.tar.xz
 cov-int
+.DS_Store
+.idea

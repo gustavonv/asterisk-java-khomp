@@ -10,17 +10,17 @@ import org.asteriskjava.manager.event.ManagerEvent;
 @FunctionalInterface
 public interface NewSMSBroadcastListener extends ManagerEventListener {
 
-    /**
-     * Trigger when there is a new {@link NewSMSBroadcastEvent}.
-     *
-     * @param event the event.
-     */
-    void handleNewSMSBroadcastEvent(NewSMSBroadcastEvent event);
+  /**
+   * Trigger when there is a new {@link NewSMSBroadcastEvent}.
+   *
+   * @param event the event.
+   */
+  void handleNewSMSBroadcastEvent(NewSMSBroadcastEvent event);
 
-    @Override
-    default void onManagerEvent(ManagerEvent event) {
-        if (event instanceof NewSMSBroadcastEvent) {
-            handleNewSMSBroadcastEvent((NewSMSBroadcastEvent) event);
-        }
+  @Override
+  default void onManagerEvent(ManagerEvent event) {
+    if (event instanceof NewSMSBroadcastEvent) {
+      handleNewSMSBroadcastEvent((NewSMSBroadcastEvent) event);
     }
+  }
 }
